@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>New Student Registration</h1>
+        <form id="signup-form">
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last/Family Name" required>
+            <input type="text" id="parentName" placeholder="Parent's Name" required>
+            <input type="tel" id="mobile" placeholder="Your Mobile Number (This will be your username)" required>
+            <input type="password" id="password" placeholder="Create a Password" required>
+            
+            <select id="class" required>
+                <option value="">-- Select Class --</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+            </select>
+
+            <div id="goal-section" class="hidden">
+                <select id="goal">
+                    <option value="">-- Select Your Goal --</option>
+                    <option value="JEE">JEE</option>
+                    <option value="NEET">NEET</option>
+                </select>
+            </div>
+
+            <input type="date" id="dob" placeholder="Date of Birth" required>
+            <textarea id="address" placeholder="House Address" required></textarea>
+            <input type="tel" id="parentMobile" placeholder="Parent's Mobile Number" required>
+            <input type="email" id="altEmail" placeholder="Alternate Email ID">
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <div id="message" class="message"></div>
+        <p>Already have an account? <a href="index.html">Login</a></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
