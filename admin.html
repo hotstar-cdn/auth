@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="admin-login-section">
+            <h1>Admin Login</h1>
+            <input type="text" id="admin-user" placeholder="Admin Username">
+            <input type="password" id="admin-pass" placeholder="Admin Password">
+            <button id="admin-login-btn">Login</button>
+            <div id="admin-login-message" class="message"></div>
+        </div>
+
+        <div id="admin-dashboard" class="hidden">
+             <div class="header">
+                <h1>Admin Dashboard</h1>
+                <button id="admin-logout-btn">Logout</button>
+            </div>
+
+            <!-- Student Management -->
+            <div class="section">
+                <h2>Student Management</h2>
+                <div class="bulk-actions">
+                    <button id="activate-selected-btn">Activate Selected</button>
+                    <select id="bulk-class-change">
+                        <option value="">Change Class For Selected</option>
+                        <option value="6">Class 6</option>
+                        <option value="7">Class 7</option>
+                        <option value="8">Class 8</option>
+                        <option value="9">Class 9</option>
+                        <option value="10">Class 10</option>
+                        <option value="11">Class 11</option>
+                        <option value="12">Class 12</option>
+                    </select>
+                    <button id="delete-selected-btn">Delete Selected</button>
+                </div>
+                <table id="students-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="select-all-checkbox"></th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Mobile</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-table-body">
+                        <!-- Student rows will be injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Attendance & Performance -->
+            <div class="section">
+                <h2>Mark Attendance / Performance</h2>
+                <select id="student-select-for-marks">
+                    <option value="">-- Select a Student --</option>
+                </select>
+                <input type="date" id="record-date">
+                <select id="attendance-status">
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                </select>
+                <button id="mark-attendance-btn">Mark Attendance</button>
+                <br><br>
+                <textarea id="performance-note" placeholder="Add a performance note..."></textarea>
+                <button id="add-performance-btn">Add Performance Note</button>
+                 <div id="mark-message" class="message"></div>
+            </div>
+
+
+            <!-- Teacher Management -->
+            <div class="section">
+                <h2>Add New Teacher</h2>
+                <form id="add-teacher-form">
+                    <input type="text" id="teacher-name" placeholder="Full Name" required>
+                    <input type="tel" id="teacher-mobile" placeholder="Mobile Number" required>
+                    <input type="text" id="teacher-subject" placeholder="Subject" required>
+                    <input type="text" id="teacher-class" placeholder="Classes (e.g., 9, 10, 11)" required>
+                    <input type="password" id="teacher-password" placeholder="Create Password" required>
+                    <button type="submit">Add Teacher</button>
+                    <div id="teacher-message" class="message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
