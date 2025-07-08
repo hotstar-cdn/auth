@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Portal</h1>
+        <div id="login-form">
+            <p>Enter your mobile number to begin.</p>
+            <input type="tel" id="mobile" placeholder="Mobile Number" required>
+            <div id="password-field" class="hidden">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button id="continue-btn">Continue</button>
+            <div id="message" class="message"></div>
+            <p>Admin? <a href="admin.html">Login Here</a> | Parent? <a href="parents.html">Login Here</a></p>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
